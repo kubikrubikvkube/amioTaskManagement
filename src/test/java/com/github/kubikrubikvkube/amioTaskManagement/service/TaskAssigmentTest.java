@@ -1,11 +1,9 @@
 package com.github.kubikrubikvkube.amioTaskManagement.service;
 
 import com.github.kubikrubikvkube.amioTaskManagement.entity.Task;
-import com.github.kubikrubikvkube.amioTaskManagement.entity.TaskProgressStatus;
 import com.github.kubikrubikvkube.amioTaskManagement.entity.TeamMember;
 import com.github.kubikrubikvkube.amioTaskManagement.repository.TaskRepository;
 import com.github.kubikrubikvkube.amioTaskManagement.repository.TeamMemberRepository;
-import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

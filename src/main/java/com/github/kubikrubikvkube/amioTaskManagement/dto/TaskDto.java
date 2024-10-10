@@ -1,7 +1,6 @@
 package com.github.kubikrubikvkube.amioTaskManagement.dto;
 
 import com.github.kubikrubikvkube.amioTaskManagement.entity.TaskProgressStatus;
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 

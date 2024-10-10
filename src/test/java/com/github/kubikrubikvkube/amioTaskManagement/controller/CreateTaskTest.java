@@ -1,7 +1,6 @@
 package com.github.kubikrubikvkube.amioTaskManagement.controller;
 
 import com.github.kubikrubikvkube.amioTaskManagement.controller.dto.CreateTaskRequestDto;
-import com.github.kubikrubikvkube.amioTaskManagement.controller.dto.CreateTaskResponseDto;
 import com.github.kubikrubikvkube.amioTaskManagement.entity.TaskProgressStatus;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
