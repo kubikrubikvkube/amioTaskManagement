@@ -1,7 +1,6 @@
 package com.github.kubikrubikvkube.amioTaskManagement.controller;
 
-import com.github.kubikrubikvkube.amioTaskManagement.controller.service.TaskService;
-import com.github.kubikrubikvkube.amioTaskManagement.exception.TaskException;
+import com.github.kubikrubikvkube.amioTaskManagement.service.TaskService;
 import com.github.kubikrubikvkube.amioTaskManagement.util.MockUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,7 +13,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(TaskController.class)

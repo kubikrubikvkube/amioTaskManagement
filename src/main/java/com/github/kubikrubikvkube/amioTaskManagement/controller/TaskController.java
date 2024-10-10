@@ -2,7 +2,7 @@ package com.github.kubikrubikvkube.amioTaskManagement.controller;
 
 import com.github.kubikrubikvkube.amioTaskManagement.controller.dto.CreateTaskRequestDto;
 import com.github.kubikrubikvkube.amioTaskManagement.controller.dto.CreateTaskResponseDto;
-import com.github.kubikrubikvkube.amioTaskManagement.controller.service.TaskService;
+import com.github.kubikrubikvkube.amioTaskManagement.service.TaskService;
 import com.github.kubikrubikvkube.amioTaskManagement.dto.TaskDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -12,12 +12,11 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.NotImplementedException;
+import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Book;
-
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "Задачи API")
@@ -39,4 +38,37 @@ public class TaskController {
         TaskDto taskDto = taskService.createTask(requestDto);
         return new CreateTaskResponseDto(taskDto);
     }
+
+    @PostMapping("api/task/assign/{teamMemberId}")
+    public Object assignTask(@Valid @RequestBody CreateTaskRequestDto requestDto, @PathVariable Long teamMemberId) {
+        log.info("Assign task by id");
+        throw new NotImplementedException();
+    }
+
+    @GetMapping("api/task/{taskId}")
+    public Object getTask(@PathVariable Long taskId) {
+        log.info("Get task by id");
+        throw new NotImplementedException();
+    }
+
+
+    @GetMapping("api/task/")
+    public Object getAllTasks() {
+        log.info("Get all task");
+        throw new NotImplementedException();
+    }
+
+    @PutMapping("api/task/{taskId}")
+    public Object updateTask(@PathVariable Long taskId) {
+        log.info("Update task by id");
+        throw new NotImplementedException();
+    }
+
+    @DeleteMapping("api/task/{taskId}")
+    public Object deleteTask(@PathVariable Long taskId) {
+        log.info("Delete task by id");
+        throw new NotImplementedException();
+    }
+
+
 }

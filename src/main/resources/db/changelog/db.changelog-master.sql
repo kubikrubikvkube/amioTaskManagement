@@ -7,16 +7,23 @@ create table Task
     team_member_id BIGINT,
     fk_teammember BIGINT,
 
-    constraint Task_pk
-        primary key (id)
+    CONSTRAINT Task_pk
+        PRIMARY KEY (id)
 );
 
-create table TeamMember
+CREATE TABLE TeamMember
 (
     id   BIGINT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50),
     task_id BIGINT,
 
-    constraint TeamMember_pk
-        primary key (id)
+    CONSTRAINT TeamMember_pk
+        PRIMARY KEY (id)
+
 );
+
+ALTER TABLE TeamMember
+    ADD CONSTRAINT task_id_uq UNIQUE (task_id);
+
+ALTER TABLE Task
+    ADD FOREIGN KEY (team_member_id) REFERENCES TeamMember(task_id)

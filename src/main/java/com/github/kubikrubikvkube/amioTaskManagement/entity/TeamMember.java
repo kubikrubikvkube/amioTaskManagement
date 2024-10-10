@@ -22,6 +22,6 @@ public class TeamMember {
 
     private Long taskId;
 
-    @OneToMany(mappedBy = "teamMembers")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "teamMembers")
     private List<Task> tasks;
 }

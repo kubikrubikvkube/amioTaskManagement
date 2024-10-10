@@ -12,6 +12,6 @@ import lombok.Data;
 public class CreateTaskRequestDto {
 
     @NotBlank
-    @Size(max = 50, message = "Слишком длинное имя")
+    @Size(min = 1, max = 50, message = "Неверная длина имени задачи")
     private String name;
 }
