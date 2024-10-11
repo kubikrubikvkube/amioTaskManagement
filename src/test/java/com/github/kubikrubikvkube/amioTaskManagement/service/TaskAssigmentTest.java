@@ -4,6 +4,7 @@ import com.github.kubikrubikvkube.amioTaskManagement.entity.Task;
 import com.github.kubikrubikvkube.amioTaskManagement.entity.TeamMember;
 import com.github.kubikrubikvkube.amioTaskManagement.repository.TaskRepository;
 import com.github.kubikrubikvkube.amioTaskManagement.repository.TeamMemberRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,12 @@ public class TaskAssigmentTest {
 
     @Autowired
     TeamMemberRepository teamMemberRepository;
+
+    @BeforeEach
+    void setUp() {
+        taskRepository.deleteAll();
+        teamMemberRepository.deleteAll();
+    }
 
     @Test
     @DisplayName("Задачи ассайнятся на членов команды и сохраняются в репозиторий")

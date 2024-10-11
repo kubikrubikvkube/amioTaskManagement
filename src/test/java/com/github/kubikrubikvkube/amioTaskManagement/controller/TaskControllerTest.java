@@ -34,7 +34,7 @@ class TaskControllerTest {
         when(taskService.createTask(any())).thenReturn(MockUtils.taskDto());
 
         mockMvc.perform(
-                post("/api/task/create")
+                post("/api/task")
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
                         .content("""
@@ -50,7 +50,7 @@ class TaskControllerTest {
     void createTask_invalid() throws Exception {
 
         mockMvc.perform(
-                post("/api/task/create")
+                post("/api/task")
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
                         .content("""

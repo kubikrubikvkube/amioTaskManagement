@@ -3,6 +3,7 @@ package com.github.kubikrubikvkube.amioTaskManagement.service;
 import com.github.kubikrubikvkube.amioTaskManagement.controller.dto.CreateTeamMemberRequestDto;
 import com.github.kubikrubikvkube.amioTaskManagement.dto.TeamMemberDto;
 import com.github.kubikrubikvkube.amioTaskManagement.repository.TeamMemberRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,12 @@ class TeamMemberServiceTest {
 
     @Autowired
     TeamMemberRepository teamMemberRepository;
+
+    @BeforeEach
+    void setUp() {
+        teamMemberRepository.deleteAll();
+    }
+
 
     @Test
     @DisplayName("Член команды сохраняется в репозиторий по запросу")

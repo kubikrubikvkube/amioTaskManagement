@@ -33,14 +33,20 @@ public class TaskController {
                     content = @Content),
             @ApiResponse(responseCode = "500", description = "Внутренняя ошибка сервера",
                     content = @Content) })
-    @PostMapping("api/task/create")
+    @PostMapping("api/task")
     public CreateTaskResponseDto createTask(@Valid @RequestBody CreateTaskRequestDto requestDto) {
         TaskDto taskDto = taskService.createTask(requestDto);
         return new CreateTaskResponseDto(taskDto);
     }
 
     @PostMapping("api/task/assign/{teamMemberId}")
-    public Object assignTask(@Valid @RequestBody CreateTaskRequestDto requestDto, @PathVariable Long teamMemberId) {
+    public Object createAndAssignTask(@Valid @RequestBody CreateTaskRequestDto requestDto, @PathVariable Long teamMemberId) {
+        log.info("Assign task while creating");
+        throw new NotImplementedException();
+    }
+
+    @PostMapping("api/task/{taskId}/assign/{teamMemberId}")
+    public Object createAndAssignTask(@PathVariable Long teamMemberId, @PathVariable Long taskId) {
         log.info("Assign task by id");
         throw new NotImplementedException();
     }
